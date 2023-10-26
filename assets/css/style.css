@@ -550,7 +550,9 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #0563bb;
+  background: -webkit-linear-gradient( #092279f9, #00ff7cf4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 0;
 }
 
