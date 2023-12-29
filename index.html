@@ -31,7 +31,7 @@
 </head>
 
 <body id="style-4"> 
-
+  <div class="cursor"></div>
   <!-- ======= Mobile nav toggle button ======= -->
 
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
@@ -583,6 +583,36 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+
+    const cursor = document.querySelector(".cursor");
+    var timeout;
+    
+    //cursor movement
+    document.addEventListener("mousemove", (e) => {
+    
+    let x = e.pageX;
+    let y = e.pageY;
+    
+    cursor.style.top = y + 'px';
+    cursor.style.left = x + 'px';
+    cursor.style.display = 'block';
+    
+    function mouseStopped () {
+        cursor.style.display = 'none';
+    }
+    
+    clearTimeout(timeout);
+    timeout = setTimeout(mouseStopped, 1000);
+    
+    });
+    
+    documnet.addEventListener("mouseout", () =>{
+        cursor.style.display = 'none';
+    });
+    
+        </script>
 
 </body>
 
